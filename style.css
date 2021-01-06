@@ -1,0 +1,106 @@
+:root {
+  --card-width: 275px;
+  --card-height: 275px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: rgb(22, 7, 87);
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+header h1,
+p {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2, 13, 22);
+}
+
+.container .card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+  border: 2px solid white;
+}
+
+.container .card .image {
+  height: 100%;
+  width: 100%;
+}
+
+.container .card .image img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.container .card .content {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  transition: 500ms;
+  transform: translateY(50px);
+  opacity: 0;
+  font-size: 16px;
+  padding-left: 30px;
+  font-weight: 500;
+}
+
+.container .card:hover .content {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* MAGIC BY MAGICAL PRAKHAR */
+
+.container .card span {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(11, 185, 118, 0.433);
+  transition: width 0.5s, height 0.5s;
+  border-radius: 50%;
+}
+
+.container .card:hover span {
+  width: 1500px;
+  height: 1500px;
+}
+
+/* responsive */
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 15px;
+  }
+}
